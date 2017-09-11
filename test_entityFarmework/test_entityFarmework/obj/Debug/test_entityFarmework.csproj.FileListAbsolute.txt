@@ -1,0 +1,16 @@
+c:\users\huy.nguyenvan\documents\visual studio 2015\Projects\test_entityFarmework\test_entityFarmework\bin\Debug\test_entityFarmework.exe.config
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\test_entityFarmework\test_entityFarmework\bin\Debug\test_entityFarmework.exe
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\test_entityFarmework\test_entityFarmework\bin\Debug\test_entityFarmework.pdb
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\test_entityFarmework\test_entityFarmework\bin\Debug\EntityFramework.dll
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\test_entityFarmework\test_entityFarmework\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\test_entityFarmework\test_entityFarmework\bin\Debug\EntityFramework.xml
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\test_entityFarmework\test_entityFarmework\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\test_entityFarmework\test_entityFarmework\obj\Debug\test_entityFarmework.exe
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\test_entityFarmework\test_entityFarmework\obj\Debug\test_entityFarmework.pdb
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\test_entityFarmework\test_entityFarmework\obj\Debug\test_entityFarmework.csprojResolveAssemblyReference.cache
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\test_entityFarmework\test_entityFarmework\bin\Debug\AutoMapper.dll
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\test_entityFarmework\test_entityFarmework\bin\Debug\AutoMapper.xml
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\test_entityFarmework\test_entityFarmework\bin\Debug\AutoMapper.EF6.dll
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\test_entityFarmework\test_entityFarmework\bin\Debug\DelegateDecompiler.dll
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\test_entityFarmework\test_entityFarmework\bin\Debug\DelegateDecompiler.EntityFramework.dll
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\test_entityFarmework\test_entityFarmework\bin\Debug\Mono.Reflection.dll
