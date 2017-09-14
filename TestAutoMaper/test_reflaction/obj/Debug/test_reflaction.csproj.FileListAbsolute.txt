@@ -1,0 +1,12 @@
+c:\users\huy.nguyenvan\documents\visual studio 2015\Projects\test_reflaction\test_reflaction\bin\Debug\test_reflaction.exe.config
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\test_reflaction\test_reflaction\bin\Debug\test_reflaction.exe
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\test_reflaction\test_reflaction\bin\Debug\test_reflaction.pdb
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\test_reflaction\test_reflaction\obj\Debug\test_reflaction.csprojResolveAssemblyReference.cache
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\test_reflaction\test_reflaction\obj\Debug\test_reflaction.exe
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\test_reflaction\test_reflaction\obj\Debug\test_reflaction.pdb
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\test_reflaction\test_reflaction\bin\Debug\EntityFramework.dll
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\test_reflaction\test_reflaction\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\test_reflaction\test_reflaction\bin\Debug\EntityFramework.xml
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\test_reflaction\test_reflaction\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\test_reflaction\test_reflaction\bin\Debug\AutoMapper.dll
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\test_reflaction\test_reflaction\bin\Debug\AutoMapper.xml
