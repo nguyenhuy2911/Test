@@ -11,21 +11,14 @@ namespace test_reflaction.Mapping
     public abstract class ProfileBase : Profile
     {
         private readonly string _profileName;
-        protected ProfileBase(string profileName)
+        protected ProfileBase()
         {
-            _profileName = profileName;
+            _profileName = "ProfileBase";
         }
 
         public override string ProfileName
         {
             get { return _profileName; }
         }
-
-        //protected override void Configure()
-        //{           
-        //    CreateMaps();
-        //}
-
-        //protected abstract void CreateMaps();
     }
 }

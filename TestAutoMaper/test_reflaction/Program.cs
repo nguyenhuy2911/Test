@@ -13,7 +13,7 @@ namespace test_reflaction
     {
         static void Main(string[] args)
         {
-         //   AutoMapperConfiguration.Configure();
+            AutoMapperConfiguration.Configure();
             Product product = new Product()
             {
                 Active = false,

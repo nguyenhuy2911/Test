@@ -9,14 +9,9 @@ namespace test_reflaction.Mapping
 {
     public class ProductMappingProfile : ProfileBase
     {
-        public ProductMappingProfile() : base("ProfileBase")
+        public ProductMappingProfile()
         {
             CreateMap<Product, Product_DTO>();
         }
-
-        //protected override void CreateMaps()
-        //{
-        //    throw new NotImplementedException();
-        //}
     }
 }
