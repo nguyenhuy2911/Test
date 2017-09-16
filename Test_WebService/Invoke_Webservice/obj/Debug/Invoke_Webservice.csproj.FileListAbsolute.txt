@@ -1,0 +1,6 @@
+c:\users\huy-pv\documents\visual studio 2015\Projects\Test_WebService\Invoke_Webservice\obj\Debug\Invoke_Webservice.csprojResolveAssemblyReference.cache
+c:\users\huy-pv\documents\visual studio 2015\Projects\Test_WebService\Invoke_Webservice\bin\Debug\Invoke_Webservice.exe.config
+c:\users\huy-pv\documents\visual studio 2015\Projects\Test_WebService\Invoke_Webservice\bin\Debug\Invoke_Webservice.exe
+c:\users\huy-pv\documents\visual studio 2015\Projects\Test_WebService\Invoke_Webservice\bin\Debug\Invoke_Webservice.pdb
+c:\users\huy-pv\documents\visual studio 2015\Projects\Test_WebService\Invoke_Webservice\obj\Debug\Invoke_Webservice.exe
+c:\users\huy-pv\documents\visual studio 2015\Projects\Test_WebService\Invoke_Webservice\obj\Debug\Invoke_Webservice.pdb
