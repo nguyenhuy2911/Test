@@ -74,6 +74,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DatabaseExtention.cs" />
     <Compile Include="RepositoryBase.cs" />
     <Compile Include="Entity_Contex.cs" />
     <Compile Include="Image.cs" />
@@ -82,6 +83,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="repository\ProductRepository.cs" />
+    <Compile Include="SqlParameterAttribute.cs" />
+    <Compile Include="Update_Product_Store_Param.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

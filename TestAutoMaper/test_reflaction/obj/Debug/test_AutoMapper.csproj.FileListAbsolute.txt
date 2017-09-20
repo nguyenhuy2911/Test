@@ -1,0 +1,12 @@
+E:\lip cms\Practise\TestAutoMaper\test_reflaction\bin\Debug\test_reflaction.exe.config
+E:\lip cms\Practise\TestAutoMaper\test_reflaction\obj\Debug\test_reflaction.exe
+E:\lip cms\Practise\TestAutoMaper\test_reflaction\obj\Debug\test_reflaction.pdb
+E:\lip cms\Practise\TestAutoMaper\test_reflaction\bin\Debug\test_reflaction.exe
+E:\lip cms\Practise\TestAutoMaper\test_reflaction\bin\Debug\test_reflaction.pdb
+E:\lip cms\Practise\TestAutoMaper\test_reflaction\bin\Debug\AutoMapper.dll
+E:\lip cms\Practise\TestAutoMaper\test_reflaction\bin\Debug\EntityFramework.dll
+E:\lip cms\Practise\TestAutoMaper\test_reflaction\bin\Debug\EntityFramework.SqlServer.dll
+E:\lip cms\Practise\TestAutoMaper\test_reflaction\bin\Debug\AutoMapper.xml
+E:\lip cms\Practise\TestAutoMaper\test_reflaction\bin\Debug\EntityFramework.xml
+E:\lip cms\Practise\TestAutoMaper\test_reflaction\bin\Debug\EntityFramework.SqlServer.xml
+E:\lip cms\Practise\TestAutoMaper\test_reflaction\obj\Debug\test_AutoMapper.csprojResolveAssemblyReference.cache

@@ -26,11 +26,14 @@ namespace test_entityFarmework.repository
                     dbEntityEntry.Property(property.Name).CurrentValue = current;
                     dbEntityEntry.Property(property.Name).IsModified = true;
                 }
-                  
+
             }
             DataContext.SaveChanges();
+        }
 
-
+        public int UpdateByStore(Update_Product_Store_Param paramObj)
+        {
+            return DataContext.UpdateData_By_Stored("Update_Product", paramObj);
         }
     }
 }

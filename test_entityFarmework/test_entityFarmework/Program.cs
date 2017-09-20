@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using test_entityFarmework.repository;
-
 namespace test_entityFarmework
 {
     class Program
@@ -13,6 +12,20 @@ namespace test_entityFarmework
         {
             Console.WriteLine("update");
             Console.ReadLine();
+            var param = new Update_Product_Store_Param()
+            {
+                Id = 2,
+                Name = "rrrrrrrrrrrr"
+            };
+            var productRipository = new ProductRepository();
+            int result = productRipository.UpdateByStore(param);
+            string message = result == 1 ? "success" : "fail";
+            Console.WriteLine(message);
+            Console.ReadLine();
+        }
+
+        private static void update()
+        {
             var product = new Product()
             {
                 Id = 2,
@@ -21,9 +34,7 @@ namespace test_entityFarmework
 
             var productRipository = new ProductRepository();
             productRipository.Update(product);
-   
         }
 
-        
     }
 }
