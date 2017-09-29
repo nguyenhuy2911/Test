@@ -1,0 +1,21 @@
+﻿@using Authorization_Authentication.AuthenticateManager
+@{
+    var user = UserManager.GetUserFromCookie();
+}
+@if (user != null)
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            <a href="#">   @user.UserProfile.Name</a>
+        </li>
+        <li>
+        <li>@Html.ActionLink("Đăng xuất", "LogOut", "Login")</li>
+    </ul>
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("Đăng nhập", "Index", "Login")</li>
+
+    </ul>
+}
