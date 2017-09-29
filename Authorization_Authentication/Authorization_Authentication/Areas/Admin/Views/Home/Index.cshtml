@@ -1,8 +1,32 @@
-﻿
+﻿@model  Authorization_Authentication.Areas.Admin.Models.HomeModel
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Trang chủ Admin</h2>
+@foreach (var user in Model.Users)
+{
+    <ul>
+        <li>
+            <label style="color:#E91E63">Account:  @user.UserName - @user.UserProfile.Name</label>
+            <ul>
+                @foreach (var role in user.Roles)
+                {
 
+                    <li>
+                        <label style="color:#00bcd4">Role: @role.RoleName </label>
+                        <ul>
+                            @foreach (var function in role.Functionalities)
+                            {
+                                <li>@function.Name - @function.Title</li>
+                            }
+                        </ul>
+                    </li>
+                }
+            </ul>
+        </li>
+
+    </ul>
+
+}

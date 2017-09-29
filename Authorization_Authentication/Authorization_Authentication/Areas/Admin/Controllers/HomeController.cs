@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Authorization_Authentication.Areas.Admin.Models;
+using Authorization_Authentication.AuthenticateManager;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +13,13 @@ namespace Authorization_Authentication.Areas.Admin.Controllers
         // GET: Admin/Home
         public ActionResult Index()
         {
-            return View();
+            var listUser = UserManager._listUser;
+            
+            var model = new HomeModel()
+            {
+                Users = listUser
+            };
+            return View(model);
         }
 
         public ActionResult NotAuthorRize()

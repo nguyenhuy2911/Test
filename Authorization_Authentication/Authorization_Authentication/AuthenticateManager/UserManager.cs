@@ -32,13 +32,13 @@ namespace Authorization_Authentication.AuthenticateManager
                         Functionalities = new List<Functionality>
                         {
                             new Functionality { ID= 1, Name="admin/product", Title="product"},
-                            new Functionality { ID= 2, Name="admin/product/create", Title="product/create"},
-                            new Functionality { ID= 3, Name="admin/product/update", Title="product/update"},
-                            new Functionality { ID= 4, Name="admin/product/delete", Title="product/delete"},
+                            new Functionality { ID= 2, Name="admin/product/create", Title="create"},
+                            new Functionality { ID= 3, Name="admin/product/update", Title="update"},
+                            new Functionality { ID= 4, Name="admin/product/delete", Title="delete"},
                             new Functionality { ID= 5, Name="admin/category", Title="category"},
-                            new Functionality { ID= 6, Name="admin/category/create", Title="category/create"},
-                            new Functionality { ID= 7, Name="admin/category/update", Title="category/update"},
-                            new Functionality { ID= 8, Name="admin/category/delete", Title="category/delete"},
+                            new Functionality { ID= 6, Name="admin/category/create", Title="create"},
+                            new Functionality { ID= 7, Name="admin/category/update", Title="update"},
+                            new Functionality { ID= 8, Name="admin/category/delete", Title="delete"},
                         },
                     }
                 }
@@ -60,9 +60,9 @@ namespace Authorization_Authentication.AuthenticateManager
                         Functionalities = new List<Functionality>
                         {
                             new Functionality { ID= 5, Name="admin/category", Title="category"},
-                            new Functionality { ID= 6, Name="admin/category/create", Title="category/create"},
-                            new Functionality { ID= 7, Name="admin/category/update", Title="category/update"},
-                            new Functionality { ID= 8, Name="admin/category/delete", Title="category/delete"},
+                            new Functionality { ID= 6, Name="admin/category/create", Title="create"},
+                            new Functionality { ID= 7, Name="admin/category/update", Title="update"},
+                            new Functionality { ID= 8, Name="admin/category/delete", Title="delete"},
                         }
                     }
                 }
