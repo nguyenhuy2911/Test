@@ -1,0 +1,17 @@
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\PingYourPackage\PingYourPackage.API.Model\obj\Debug\PingYourPackage.API.Model.csprojResolveAssemblyReference.cache
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\PingYourPackage\PingYourPackage.API.Model\bin\Debug\PingYourPackage.API.Model.dll
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\PingYourPackage\PingYourPackage.API.Model\bin\Debug\PingYourPackage.API.Model.pdb
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\PingYourPackage\PingYourPackage.API.Model\bin\Debug\Newtonsoft.Json.dll
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\PingYourPackage\PingYourPackage.API.Model\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\PingYourPackage\PingYourPackage.API.Model\bin\Debug\System.Web.Http.dll
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\PingYourPackage\PingYourPackage.API.Model\bin\Debug\WebApiDoodle.Net.Http.Client.dll
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\PingYourPackage\PingYourPackage.API.Model\bin\Debug\WebApiDoodle.Net.Http.Client.Model.dll
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\PingYourPackage\PingYourPackage.API.Model\bin\Debug\WebApiDoodle.Web.Meta.dll
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\PingYourPackage\PingYourPackage.API.Model\bin\Debug\Newtonsoft.Json.xml
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\PingYourPackage\PingYourPackage.API.Model\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\PingYourPackage\PingYourPackage.API.Model\bin\Debug\System.Web.Http.xml
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\PingYourPackage\PingYourPackage.API.Model\bin\Debug\WebApiDoodle.Net.Http.Client.xml
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\PingYourPackage\PingYourPackage.API.Model\bin\Debug\WebApiDoodle.Net.Http.Client.Model.xml
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\PingYourPackage\PingYourPackage.API.Model\bin\Debug\WebApiDoodle.Web.Meta.xml
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\PingYourPackage\PingYourPackage.API.Model\obj\Debug\PingYourPackage.API.Model.dll
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\PingYourPackage\PingYourPackage.API.Model\obj\Debug\PingYourPackage.API.Model.pdb

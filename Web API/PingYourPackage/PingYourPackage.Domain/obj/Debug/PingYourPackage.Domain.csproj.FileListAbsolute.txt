@@ -1,0 +1,15 @@
+c:\users\huy.nguyenvan\documents\visual studio 2015\Projects\PingYourPackage\PingYourPackage.Domain\bin\Debug\PingYourPackage.Domain.dll
+c:\users\huy.nguyenvan\documents\visual studio 2015\Projects\PingYourPackage\PingYourPackage.Domain\bin\Debug\PingYourPackage.Domain.pdb
+c:\users\huy.nguyenvan\documents\visual studio 2015\Projects\PingYourPackage\PingYourPackage.Domain\obj\Debug\PingYourPackage.Domain.csprojResolveAssemblyReference.cache
+c:\users\huy.nguyenvan\documents\visual studio 2015\Projects\PingYourPackage\PingYourPackage.Domain\obj\Debug\PingYourPackage.Domain.dll
+c:\users\huy.nguyenvan\documents\visual studio 2015\Projects\PingYourPackage\PingYourPackage.Domain\obj\Debug\PingYourPackage.Domain.pdb
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\PingYourPackage\PingYourPackage.Domain\bin\Debug\PingYourPackage.Domain.dll.config
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\PingYourPackage\PingYourPackage.Domain\bin\Debug\EntityFramework.dll
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\PingYourPackage\PingYourPackage.Domain\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\PingYourPackage\PingYourPackage.Domain\bin\Debug\EntityFramework.xml
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\PingYourPackage\PingYourPackage.Domain\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\PingYourPackage\PingYourPackage.Domain\obj\Debug\PingYourPackage.Domain.Migrations.Init.resources
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\PingYourPackage\PingYourPackage.Domain\obj\Debug\PingYourPackage.Domain.csproj.GenerateResource.Cache
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\PingYourPackage\PingYourPackage.Domain\obj\Debug\PingYourPackage.Domain.Migrations.StringLengthAttribute.resources
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\PingYourPackage\PingYourPackage.Domain\obj\Debug\PingYourPackage.Domain.Migrations.StringLengthAttribute2.resources
+C:\Users\huy.nguyenvan\Documents\Visual Studio 2015\Projects\PingYourPackage\PingYourPackage.Domain\obj\Debug\PingYourPackage.Domain.Migrations.CompletetheStruct.resources

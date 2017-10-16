@@ -9,11 +9,12 @@ namespace Authorization_Authentication.Areas.Admin.Controllers
 {
     [AuthorizeRoles(FunctionName = "admin/product")]
     public class ProductController : Controller
-    {        
-
+    {
+        
         public ActionResult Index()
         {
             return View();
         }
+        
     }
 }
