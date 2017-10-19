@@ -35,5 +35,37 @@ namespace test_entityFarmework.repository
         {
             return DataContext.UpdateData_By_Stored("Update_Product", paramObj);
         }
+
+        public Product GetById(int id)
+        {
+            return dbset.Find(id);
+        }
+
+        public List<Product> GetAll()
+        {
+            return dbset.ToList();
+        }
+
+        public List<Product> GetEagerAll()
+        {
+            return dbset.Include(p => p.Product_Categories.Select(x => x.Category))
+                        .Where(p => p.Product_Categories.Where(x => x.Category.Name == "sf").Count() > 0)
+                        .ToList();
+        }
+
+        public List<Product> GetEagerAll2()
+        {
+            return dbset.OrderBy(p => p.Id)
+                        .Skip(11).Take(10)
+                        .Include(p => p.Product_Categories.Select(x => x.Category))                                               
+                        .ToList();
+        }
+        public Product ExplicitLoad()
+        {
+            var product = dbset.FirstOrDefault();
+            DataContext.Entry(product).Collection(p => p.Product_Categories).Load();
+            return product;
+        }
+
     }
 }

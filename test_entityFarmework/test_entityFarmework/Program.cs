@@ -10,6 +10,24 @@ namespace test_entityFarmework
     {
         static void Main(string[] args)
         {
+            var _continue = "";
+            do
+            {
+                var productRipository = new ProductRepository();
+                var products = productRipository.GetEagerAll2();
+                //var categorys = products.Product_Categories;
+                //var category = categorys.First().Category;
+                //var cateRepository = new CategoryRepository();
+                //var cates = cateRepository.GetAll();
+                Console.Write("do you want to continue: ");
+                _continue = Console.ReadLine();
+            }
+            while (_continue == "y");
+            Console.ReadLine();
+        }
+
+        private static void update2()
+        {
             Console.WriteLine("update");
             Console.ReadLine();
             var param = new Update_Product_Store_Param()
@@ -21,7 +39,6 @@ namespace test_entityFarmework
             int result = productRipository.UpdateByStore(param);
             string message = result == 1 ? "success" : "fail";
             Console.WriteLine(message);
-            Console.ReadLine();
         }
 
         private static void update()
@@ -35,6 +52,5 @@ namespace test_entityFarmework
             var productRipository = new ProductRepository();
             productRipository.Update(product);
         }
-
     }
 }

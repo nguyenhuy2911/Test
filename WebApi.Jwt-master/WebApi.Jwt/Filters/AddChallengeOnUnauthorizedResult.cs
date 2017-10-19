@@ -31,7 +31,7 @@ namespace WebApi.Jwt.Filters
                 {
                     response.Headers.WwwAuthenticate.Add(Challenge);
                 }
-                }
+            }
 
             return response;
         }
