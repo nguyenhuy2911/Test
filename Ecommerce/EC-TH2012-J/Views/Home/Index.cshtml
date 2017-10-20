@@ -2,22 +2,9 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutFrontEnd.cshtml";
 }
-<div id="top-banner-and-menu" class="homepage2">
-    <div class="container">
-        <div class="col-xs-12">
-            <!-- ========================================== SECTION – HERO ========================================= -->
 
+@Html.Action("TopContentner", "Display")
 
-            @Html.Action("SlideShowView", "GiaoDien")
-
-
-            <!-- ========================================= SECTION – HERO : END ========================================= -->
-        </div>
-    </div>
-</div><!-- /.homepage2 -->
-<!-- ========================================= HOME BANNERS ========================================= -->
-@Html.Partial("~/Views/Home/_HomeBanner_Partial.cshtml")
-<!-- ========================================= HOME BANNERS : END ========================================= -->
 <script src="@Url.Content("~/js/loadmore.js")"></script>
 <div id="products-tab" class="wow fadeInUp">
     <div class="container">

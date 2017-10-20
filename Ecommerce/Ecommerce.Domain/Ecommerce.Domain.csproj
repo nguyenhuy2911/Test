@@ -51,7 +51,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Infrastructure\DatabaseFactory.cs" />
     <Compile Include="Infrastructure\EcommerceEntities.cs" />
+    <Compile Include="Infrastructure\IDatabaseFactory.cs" />
     <Compile Include="Model\AspNetRole.cs" />
     <Compile Include="Model\AspNetUser.cs" />
     <Compile Include="Model\AspNetUserClaim.cs" />
@@ -61,10 +63,10 @@
     <Compile Include="Model\ConfigAPI.cs" />
     <Compile Include="Model\DanhsachdangkisanphamNCC.cs" />
     <Compile Include="Model\DonHangKH.cs" />
-    <Compile Include="Model\GiaoDien.cs" />
+    <Compile Include="Model\Display.cs" />
     <Compile Include="Model\HangSanXuat.cs" />
     <Compile Include="Model\HopDongNCC.cs" />
-    <Compile Include="Model\KhuyenMai.cs" />
+    <Compile Include="Model\Promotion.cs" />
     <Compile Include="Model\Link.cs" />
     <Compile Include="Model\LoaiSP.cs" />
     <Compile Include="Model\NhaCungCap.cs" />

@@ -45,6 +45,14 @@
     <Reference Include="Antlr3.Runtime">
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="Autofac, Version=4.6.2.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.6.2\lib\net45\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Mvc5.4.0.2\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -104,10 +112,12 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.Cors">
@@ -187,6 +197,7 @@
   <ItemGroup>
     <Compile Include="App_Start\AddChallengeOnUnauthorizedResult.cs" />
     <Compile Include="App_Start\AuthenticationFailureResult.cs" />
+    <Compile Include="App_Start\Bootstrapper.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityBasicAuthenticationAttribute.cs" />
@@ -203,17 +214,17 @@
     <Compile Include="Controllers\B2B\HopDongController.cs" />
     <Compile Include="Controllers\B2B\NhaCungCapController.cs" />
     <Compile Include="Controllers\ThongKeController.cs" />
-    <Compile Include="Models\B2B\Classsupport.cs" />
-    <Compile Include="Models\B2B\ConfigAPIModel.cs" />
-    <Compile Include="Models\B2B\DoitacModel.cs" />
-    <Compile Include="Models\B2B\DSDangKyModel.cs" />
-    <Compile Include="Models\B2B\HopdongNCCModel.cs" />
-    <Compile Include="Models\B2B\SanPhamCanMuaAdd.cs" />
+    <Compile Include="Models\Service\B2B\Classsupport.cs" />
+    <Compile Include="Models\Service\B2B\ConfigAPIModel.cs" />
+    <Compile Include="Models\Service\B2B\DoitacModel.cs" />
+    <Compile Include="Models\Service\B2B\DSDangKyModel.cs" />
+    <Compile Include="Models\Service\B2B\HopdongNCCModel.cs" />
+    <Compile Include="Models\Service\B2B\SanPhamCanMuaAdd.cs" />
     <Compile Include="Controllers\B2B\SanPhamCanMuaController.cs" />
     <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\CustomFilterRole.cs" />
     <Compile Include="Controllers\DonhangController.cs" />
-    <Compile Include="Controllers\GiaoDienController.cs" />
+    <Compile Include="Controllers\DisplayController.cs" />
     <Compile Include="Controllers\HangSXController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KhuyenMaiController.cs" />
@@ -229,32 +240,34 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Access_token.cs" />
-    <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\B2B\DangkisanphamModel.cs" />
-    <Compile Include="Models\B2B\NhaCungCapModel.cs" />
-    <Compile Include="Models\B2B\SanphamcanmuaModel.cs" />
-    <Compile Include="Models\CategoryModel.cs" />
-    <Compile Include="Models\ClassPartial\SanphamPartial.cs" />
-    <Compile Include="Models\CommentModel.cs" />
-    <Compile Include="Models\Donhang\ChitietdonhangModel.cs" />
-    <Compile Include="Models\Donhang\DonhangKHModel.cs" />
-    <Compile Include="Models\Donhang\Donhangtongquan.cs" />
-    <Compile Include="Models\Chitietgiohang.cs" />
-    <Compile Include="Models\EmailModel.cs" />
-    <Compile Include="Models\GiaoDienModel.cs" />
-    <Compile Include="Models\Giohang.cs" />
-    <Compile Include="Models\HangSanXuatModel.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\KhuyenMaiModel.cs" />
-    <Compile Include="Models\MainMenuModel.cs" />
-    <Compile Include="Models\ManagerObiect.cs" />
-    <Compile Include="Models\NGANLUONG.cs" />
-    <Compile Include="Models\Request_token.cs" />
-    <Compile Include="Models\SanPhamModel.cs" />
-    <Compile Include="Models\Shipping.cs" />
-    <Compile Include="Models\Thanhviennhom.cs" />
-    <Compile Include="Models\UserModel.cs" />
+    <Compile Include="Models\Service\Access_token.cs" />
+    <Compile Include="Models\Service\AccountViewModels.cs" />
+    <Compile Include="Models\Service\B2B\DangkisanphamModel.cs" />
+    <Compile Include="Models\Service\B2B\NhaCungCapModel.cs" />
+    <Compile Include="Models\Service\B2B\SanphamcanmuaModel.cs" />
+    <Compile Include="Models\Service\CategoryModel.cs" />
+    <Compile Include="Models\Service\ClassPartial\SanphamPartial.cs" />
+    <Compile Include="Models\Service\CommentModel.cs" />
+    <Compile Include="Models\Service\Core\BaseService.cs" />
+    <Compile Include="Models\Service\Donhang\ChitietdonhangModel.cs" />
+    <Compile Include="Models\Service\Donhang\DonhangKHModel.cs" />
+    <Compile Include="Models\Service\Donhang\Donhangtongquan.cs" />
+    <Compile Include="Models\Service\Chitietgiohang.cs" />
+    <Compile Include="Models\Service\EmailModel.cs" />
+    <Compile Include="Models\Service\FrontEnd\DisplayService.cs" />
+    <Compile Include="Models\Service\FrontEnd\Giohang.cs" />
+    <Compile Include="Models\Service\HangSanXuatModel.cs" />
+    <Compile Include="Models\Service\IdentityModels.cs" />
+    <Compile Include="Models\Service\FrontEnd\PromotionService.cs" />
+    <Compile Include="Models\Service\MainMenuModel.cs" />
+    <Compile Include="Models\Service\ManagerObiect.cs" />
+    <Compile Include="Models\Service\NGANLUONG.cs" />
+    <Compile Include="Models\Service\Request_token.cs" />
+    <Compile Include="Models\Service\SanPhamModel.cs" />
+    <Compile Include="Models\Service\Shipping.cs" />
+    <Compile Include="Models\Service\Thanhviennhom.cs" />
+    <Compile Include="Models\Service\UserModel.cs" />
+    <Compile Include="Models\ViewModel\Header_ViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Provider\ApplicationOAuthProvider.cs" />
     <Compile Include="Startup.cs" />
@@ -579,6 +592,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="images\avatars\3a92095d-9524-4310-91db-e4b33f34d077.jpg" />
+    <Content Include="images\banners\MUA-ONLINE.png" />
+    <Content Include="images\banners\S6-S6-EDGE.png" />
     <Content Include="images\cartphieu.jpg" />
     <Content Include="images\products\016131.jpg" />
     <Content Include="images\products\021151.jpg" />
@@ -1534,6 +1549,7 @@
     <Content Include="template\assets\css\fonts\fontawesome-webfont.svg" />
     <Content Include="template\assets\css\green.css" />
     <Content Include="template\assets\css\images\bg_direction_nav.png" />
+    <Content Include="template\assets\css\custom.css" />
     <Content Include="template\assets\css\main.css" />
     <Content Include="template\assets\css\navy.css" />
     <Content Include="template\assets\css\orange.css" />
@@ -1728,7 +1744,6 @@
     <Content Include="template\assets\css\fonts\fontawesome-webfont.ttf" />
     <Content Include="template\assets\css\fonts\fontawesome-webfont.woff" />
     <Content Include="template\assets\css\fonts\FontAwesome.otf" />
-    <Content Include="template\assets\css\images\.DS_Store" />
     <Content Include="template\assets\images\products\.DS_Store" />
     <Content Include="template\assets\images\recent-posts\.DS_Store" />
     <Content Include="template\assets\js\jquery-1.10.2.min.map" />
@@ -2069,8 +2084,8 @@
     <Content Include="Views\Comment\Index.cshtml" />
     <Content Include="Views\Comment\BinhLuanPartial.cshtml" />
     <Content Include="Views\Home\_MiniBannerPartial.cshtml" />
-    <Content Include="Views\GiaoDien\Header.cshtml" />
-    <Content Include="Views\GiaoDien\General.cshtml" />
+    <Content Include="Views\Display\Header.cshtml" />
+    <Content Include="Views\Display\General.cshtml" />
     <Content Include="Views\SanPham\ThongSoKyThuatPartial.cshtml" />
     <Content Include="Views\SanPham\_PartialSanPhamLienQuan.cshtml" />
     <Content Include="Views\Comment\_ChilComment.cshtml" />
@@ -2088,9 +2103,9 @@
     <Content Include="Views\Roles\Index.cshtml" />
     <Content Include="Views\Roles\Rolelist.cshtml" />
     <Content Include="Views\Account\UserDetail.cshtml" />
-    <Content Include="Views\GiaoDien\SlideShow.cshtml" />
-    <Content Include="Views\GiaoDien\SlideShowSetting.cshtml" />
-    <Content Include="Views\GiaoDien\SlideShowView.cshtml" />
+    <Content Include="Views\Display\SlideShow.cshtml" />
+    <Content Include="Views\Display\SlideShowSetting.cshtml" />
+    <Content Include="Views\Display\_TopContentner.cshtml" />
     <Content Include="Views\KhuyenMai\KhuyenMaiPostView.cshtml" />
     <Content Include="Views\SideBar\_KhuyenMaiPost.cshtml" />
     <Content Include="Views\Donhang\Index.cshtml" />

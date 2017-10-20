@@ -15,6 +15,8 @@ namespace  Ecommerce.Web.Controllers
         private static EcommerceModel_DbContext db = new EcommerceModel_DbContext();
 
         public static List<Thanhviennhom> Ds_Group;
+
+        [OutputCache(CacheProfile = "SystemCache", Location = System.Web.UI.OutputCacheLocation.Client)]
         public ActionResult Index()
         {
             ManagerObiect.getIntance();
@@ -35,6 +37,7 @@ namespace  Ecommerce.Web.Controllers
 
             return View();
         }
+
         public ActionResult Thongtinnhom()
         {
             if (Ds_Group == null)
@@ -112,6 +115,7 @@ namespace  Ecommerce.Web.Controllers
             var donhang = dh.Xemdonhang(User.Identity.GetUserId());
             return View(donhang);
         }
+
         public ActionResult Checkout()
         {
             if (Request.IsAuthenticated)

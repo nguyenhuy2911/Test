@@ -24,7 +24,7 @@ namespace Ecommerce.Domain.Model
 
         public int? GiamGia { get; set; }
 
-        public virtual KhuyenMai KhuyenMai { get; set; }
+        public virtual Promotion Promotion { get; set; }
 
         public virtual SanPham SanPham { get; set; }
     }

@@ -31,8 +31,8 @@ namespace  Ecommerce.Web.Controllers
 
         public ActionResult KhuyenMaiPost()
         {
-            KhuyenMaiModel km = new KhuyenMaiModel();
-            return PartialView("_KhuyenMaiPost",km.TimKhuyenMai(null, null, null).Where(m=> m.NgayBatDau <= DateTime.Today && m.NgayKetThuc >= DateTime.Today));
+            PromotionService km = new PromotionService();
+            return PartialView("_KhuyenMaiPost",km.SearchPromotion(null, null, null).Where(m=> m.NgayBatDau <= DateTime.Today && m.NgayKetThuc >= DateTime.Today));
         }
     }
 }

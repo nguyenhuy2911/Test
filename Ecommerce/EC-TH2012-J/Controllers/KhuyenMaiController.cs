@@ -59,8 +59,8 @@ namespace  Ecommerce.Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            KhuyenMaiModel lm = new KhuyenMaiModel();
-            KhuyenMai sp = lm.FindById(id);
+            PromotionService lm = new PromotionService();
+            Promotion sp = lm.FindById(id);
             if (sp == null)
             {
                 return HttpNotFound();
@@ -70,12 +70,12 @@ namespace  Ecommerce.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditKhuyenMai([Bind(Include = "MaKM,TenCT,NgayBatDau,NgayKetThuc,NoiDung")] KhuyenMai loai, HttpPostedFileBase ad)
+        public ActionResult EditKhuyenMai([Bind(Include = "MaKM,TenCT,NgayBatDau,NgayKetThuc,NoiDung")] Promotion loai, HttpPostedFileBase ad)
         {
-            KhuyenMaiModel spm = new KhuyenMaiModel();
+            PromotionService spm = new PromotionService();
             if (ModelState.IsValid)
             {
-                spm.EditKhuyenMai(loai);
+                spm.EditPromotion(loai);
                 UploadAnh(ad, loai.MaKM + "1");
                 return RedirectToAction("Index");
             }
@@ -84,12 +84,12 @@ namespace  Ecommerce.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult ThemKhuyenMai([Bind(Include = "TenCT,NgayBatDau,NgayKetThuc,NoiDung")] KhuyenMai loai, HttpPostedFileBase ad)
+        public ActionResult ThemKhuyenMai([Bind(Include = "TenCT,NgayBatDau,NgayKetThuc,NoiDung")] Promotion loai, HttpPostedFileBase ad)
         {
-            KhuyenMaiModel spm = new KhuyenMaiModel();
+            PromotionService spm = new PromotionService();
             if (ModelState.IsValid && spm.KiemTraTen(loai.TenCT))
             {
-                string makm = spm.ThemKhuyenMai(loai);
+                string makm = spm.AddPromotion(loai);
                 UploadAnh(ad, makm + "1");
                 return RedirectToAction("SuaCTKhuyenMai", new { MaKM = makm });
             }
@@ -98,9 +98,9 @@ namespace  Ecommerce.Web.Controllers
 
         public ActionResult DeleteKhuyenMai(string id)
         {
-            KhuyenMaiModel spm = new KhuyenMaiModel();
+            PromotionService spm = new PromotionService();
             DeleteAnh(spm.FindById(id).AnhCT);
-            spm.DeleteKhuyenMai(id);    
+            spm.DeletePromotion(id);    
             return TimKhuyenMai(null, null, null, null);
         }
 
@@ -113,31 +113,31 @@ namespace  Ecommerce.Web.Controllers
             }
             foreach (var item in lstdel)
             {
-                KhuyenMaiModel spm = new KhuyenMaiModel();
+                PromotionService spm = new PromotionService();
                 DeleteAnh(spm.FindById(item).AnhCT);
-                spm.DeleteKhuyenMai(item);
+                spm.DeletePromotion(item);
             }
             return TimKhuyenMai(null, null, null, null);
         }
 
         public ActionResult DeleteSPKhuyenMai(string makm, string masp)
         {
-            KhuyenMaiModel spm = new KhuyenMaiModel();
-            spm.DeleteSPKhuyenMai(makm, masp);
+            PromotionService spm = new PromotionService();
+            spm.Delete_Product_Promotion(makm, masp);
             
             return RedirectToAction("DSSanPham", new { makm = makm });
         }
 
         public ActionResult TimKhuyenMai(string key, DateTime? start, DateTime? end, int? page)
         {
-            KhuyenMaiModel spm = new KhuyenMaiModel();
+            PromotionService spm = new PromotionService();
             ViewBag.key = key;
             ViewBag.start = start;
             ViewBag.end = end;
-            return PhanTrangKhuyenMai(spm.TimKhuyenMai(key, start, end), page, null);
+            return PhanTrangKhuyenMai(spm.SearchPromotion(key, start, end), page, null);
         }
 
-        public ActionResult PhanTrangKhuyenMai(IQueryable<KhuyenMai> lst, int? page, int? pagesize)
+        public ActionResult PhanTrangKhuyenMai(IQueryable<Promotion> lst, int? page, int? pagesize)
         {
             int pageSize = (pagesize ?? 10);
             int pageNumber = (page ?? 1);
@@ -146,7 +146,7 @@ namespace  Ecommerce.Web.Controllers
 
         public ActionResult kiemtra(string key)
         {
-            KhuyenMaiModel spm = new KhuyenMaiModel();
+            PromotionService spm = new PromotionService();
             if (spm.KiemTraTen(key))
                 return Json(true, JsonRequestBehavior.AllowGet);
             return Json(false, JsonRequestBehavior.AllowGet);
@@ -154,8 +154,8 @@ namespace  Ecommerce.Web.Controllers
 
         public ActionResult CTKhuyenMai(string id)
         {
-            KhuyenMaiModel km = new KhuyenMaiModel();
-            var lst = km.CTKhuyenMai(id);
+            PromotionService km = new PromotionService();
+            var lst = km.Planning_Promotion(id);
             if (lst.Any())
                 return PartialView("KhuyenMaiDetail", lst);
             return null;
@@ -168,11 +168,11 @@ namespace  Ecommerce.Web.Controllers
             {
                 return RedirectToAction("Index");
             }
-            KhuyenMaiModel spm = new KhuyenMaiModel();
+            PromotionService spm = new PromotionService();
             foreach (var item in lstkt)
             {
                 if (!string.IsNullOrEmpty(item.MaSP) && !string.IsNullOrEmpty(item.MaKM))
-                    spm.ThemSPKhuyenMai(item);
+                    spm.AddPromotion(item);
             }
             return RedirectToAction("Index");
         }
@@ -180,8 +180,8 @@ namespace  Ecommerce.Web.Controllers
         [HttpPost] 
         public ActionResult ThemSP1KhuyenMai([Bind(Include = "MaKM,MaSP,MoTa,GiamGia")] SanPhamKhuyenMai spkm)
         {
-            KhuyenMaiModel spm = new KhuyenMaiModel();
-            spm.ThemSPKhuyenMai(spkm);
+            PromotionService spm = new PromotionService();
+            spm.AddPromotion(spkm);
             return RedirectToAction("DSSanPham", new { makm = spkm.MaKM });
         }
 
@@ -192,12 +192,12 @@ namespace  Ecommerce.Web.Controllers
             {
                 return RedirectToAction("Index");
             }
-            KhuyenMaiModel spm = new KhuyenMaiModel();
+            PromotionService spm = new PromotionService();
             spm.DelAllSPKM(lstkt[0].MaKM);
             foreach (var item in lstkt)
             {
                 if (!string.IsNullOrEmpty(item.MaSP) && !string.IsNullOrEmpty(item.MaKM))
-                    spm.ThemSPKhuyenMai(item);
+                    spm.AddPromotion(item);
             }
             return RedirectToAction("Index");
         }
@@ -216,7 +216,7 @@ namespace  Ecommerce.Web.Controllers
             ViewBag.key = key;
             ViewBag.maloai = maloai;
             ViewBag.makm = makm;
-            KhuyenMaiModel km = new KhuyenMaiModel();
+            PromotionService km = new PromotionService();
             IQueryable<SanPham> lst = km.DSSP(key, maloai, makm);
             if (lst.Any())
                 return PhanTrangSP(lst, "DSSanPham", page, null);
@@ -228,7 +228,7 @@ namespace  Ecommerce.Web.Controllers
             ViewBag.key = key;
             ViewBag.maloai = maloai;
             ViewBag.makm = makm;
-            KhuyenMaiModel km = new KhuyenMaiModel();
+            PromotionService km = new PromotionService();
             IQueryable<SanPham> lst = km.DSSanPhamKhuyenMai(key, maloai, makm);
             if (lst.Any())
                 return PhanTrangSP(lst, "DSSanPhamKhuyenMai", page, null);
@@ -246,7 +246,7 @@ namespace  Ecommerce.Web.Controllers
         [AllowAnonymous]
         public ActionResult KhuyenMaiPost(string id)
         {
-            KhuyenMaiModel km = new KhuyenMaiModel();
+            PromotionService km = new PromotionService();
             return View("KhuyenMaiPostView", km.FindById(id));
         }
 
