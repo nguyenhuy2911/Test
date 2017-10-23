@@ -8,11 +8,10 @@ using Microsoft.AspNet.Identity;
 using Ecommerce.Domain.Infrastructure;
 using Ecommerce.Domain.Model;
 
-namespace  Ecommerce.Web.Controllers
+namespace Ecommerce.Web.Controllers
 {
     public class HomeController : Controller
     {
-        private static EcommerceModel_DbContext db = new EcommerceModel_DbContext();
 
         public static List<Thanhviennhom> Ds_Group;
 
@@ -20,7 +19,6 @@ namespace  Ecommerce.Web.Controllers
         public ActionResult Index()
         {
             ManagerObiect.getIntance();
-            
             return View();
         }
 
@@ -88,7 +86,7 @@ namespace  Ecommerce.Web.Controllers
             }
             return View(Ds_Group);
         }
-        
+
         public ActionResult Cart()
         {
             return View(ManagerObiect.getIntance().giohang);
@@ -145,6 +143,7 @@ namespace  Ecommerce.Web.Controllers
             {
                 DonhangKHModel dhmodel = new DonhangKHModel();
                 dhmodel.Luudonhang(dh, User.Identity.GetUserId(), ManagerObiect.getIntance().giohang);
+                ManagerObiect.getIntance().giohang.EmptyCart();
                 return RedirectToAction("Index", "Home");
             }
             else
@@ -199,7 +198,7 @@ namespace  Ecommerce.Web.Controllers
         public ActionResult SPBanChay()
         {
             SanPhamModel sp = new SanPhamModel();
-            IQueryable<SanPham> splist = sp.SPBanChay(7);      
+            IQueryable<SanPham> splist = sp.SPBanChay(7);
             if (splist.Any())
                 return PartialView("_BestSellerPartial", splist.ToList());
             else

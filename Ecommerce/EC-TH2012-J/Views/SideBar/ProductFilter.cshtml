@@ -16,8 +16,7 @@
     //    });
     //});
 
-    function summitfilter()
-    {
+    function summitfilter() {
         var form = document.getElementById("productfilterfrm");
         form.submit();
     }
@@ -26,6 +25,7 @@
 
 <!-- ========================================= PRODUCT FILTER ========================================= -->
 @using Ecommerce.Web.Models;
+@using Ecommerce.Domain.Model;
 <div class="widget">
     <h1>Lọc sản phẩm</h1>
     <form id="productfilterfrm" action="@Url.Action("AdvancedSearchView", "Search")" autocomplete="off">

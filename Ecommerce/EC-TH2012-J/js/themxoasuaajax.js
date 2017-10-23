@@ -89,6 +89,18 @@ function ChiTietItem(Url, value) {
     });
 }
 
+//ChiTietItemajax
+function ResetPass(value) {
+    $.ajax({
+        url: '/Account/ResetPass',
+        type: 'POST',
+        data: { userId: value },
+        success: function (result) {
+           
+        },
+    });
+}
+
 
 //tat bang chi tiet item
 function closeDialog() {

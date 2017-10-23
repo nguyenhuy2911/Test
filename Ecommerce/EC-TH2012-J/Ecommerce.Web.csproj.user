@@ -9,6 +9,7 @@
     <NameOfLastUsedPublishProfile>NhanNguyenThanh</NameOfLastUsedPublishProfile>
     <ProjectView>ProjectFiles</ProjectView>
     <UseIISExpress>true</UseIISExpress>
+    <WebStackScaffolding_ViewDialogWidth>600</WebStackScaffolding_ViewDialogWidth>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>

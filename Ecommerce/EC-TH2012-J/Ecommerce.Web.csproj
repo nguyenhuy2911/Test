@@ -241,7 +241,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Service\Access_token.cs" />
-    <Compile Include="Models\Service\AccountViewModels.cs" />
+    <Compile Include="Models\ViewModel\AccountViewModels.cs" />
     <Compile Include="Models\Service\B2B\DangkisanphamModel.cs" />
     <Compile Include="Models\Service\B2B\NhaCungCapModel.cs" />
     <Compile Include="Models\Service\B2B\SanphamcanmuaModel.cs" />
@@ -2097,7 +2097,7 @@
     <Content Include="Views\Account\Index.cshtml">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="Views\Account\UserList.cshtml" />
+    <Content Include="Views\Account\_UserList.cshtml" />
     <Content Include="Views\Shared\AuthorizeFailed.cshtml" />
     <Content Include="Views\Roles\CreateRole.cshtml" />
     <Content Include="Views\Roles\Index.cshtml" />
@@ -2147,6 +2147,7 @@
     <Content Include="Views\ThongKe\TheoTime.cshtml" />
     <Content Include="Views\ThongKe\TheoTiTrong.cshtml" />
     <Content Include="Views\Home\_HomeBanner_Partial.cshtml" />
+    <Content Include="Views\Account\CreateSupperAdminUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

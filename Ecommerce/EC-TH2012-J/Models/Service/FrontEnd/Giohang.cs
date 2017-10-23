@@ -30,6 +30,17 @@ namespace  Ecommerce.Web.Models
             }
             catch (Exception e) { return false; }
         }
+
+        public bool EmptyCart()
+        {
+            try
+            {
+                Cart = new List<Chitietgiohang>();
+                return true;
+            }
+            catch (Exception e) { return false; }
+        }
+
         /// <summary>
         /// Tính tổng tiền của các sản phẩm trong giỏ hàng
         /// </summary>

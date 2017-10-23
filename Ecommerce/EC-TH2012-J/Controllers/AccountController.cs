@@ -14,8 +14,9 @@ using System.IO;
 using PagedList;
 using PagedList.Mvc;
 using Ecommerce.Domain.Model;
+using Ecommerce.Web.Models.ViewModel;
 
-namespace  Ecommerce.Web.Controllers
+namespace Ecommerce.Web.Controllers
 {
     [Authorize]
     public class AccountController : Controller
@@ -40,8 +41,7 @@ namespace  Ecommerce.Web.Controllers
             else
                 return true;
         }
-        //
-        // GET: /Account/Login
+
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
@@ -49,8 +49,6 @@ namespace  Ecommerce.Web.Controllers
             return PartialView("Login");
         }
 
-        //
-        // POST: /Account/Login
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -59,11 +57,13 @@ namespace  Ecommerce.Web.Controllers
             if (ModelState.IsValid)
             {
                 var user = await UserManager.FindAsync(model.UserName, model.Password);
+                var context = new ApplicationDbContext();
+                //  var user = context.Set<ApplicationUser>().Where(p => p.UserName == model.UserName).First();
                 if (user != null)
                 {
                     await SignInAsync(user, model.RememberMe);
                     ManagerObiect.getIntance().userName = model.UserName;
-                    if(UserManager.GetRoles(user.Id).FirstOrDefault() == "Nhà cung cấp")
+                    if (UserManager.GetRoles(user.Id).FirstOrDefault() == "Nhà cung cấp")
                     {
                         return RedirectToLocal("/Auction/index");
                     }
@@ -71,7 +71,7 @@ namespace  Ecommerce.Web.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Invalid username or password.");
+                    ModelState.AddModelError("", "Sai mật khẩu và tên đăng nhập");
                 }
             }
 
@@ -79,8 +79,6 @@ namespace  Ecommerce.Web.Controllers
             return View(model);
         }
 
-        //
-        // GET: /Account/Register
         [AllowAnonymous]
         public ActionResult Register()
         {
@@ -123,8 +121,6 @@ namespace  Ecommerce.Web.Controllers
         }
 
 
-        //
-        // POST: /Account/Register
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -294,8 +290,6 @@ namespace  Ecommerce.Web.Controllers
             return new ChallengeResult(provider, Url.Action("LinkLoginCallback", "Account"), User.Identity.GetUserId());
         }
 
-        //
-        // GET: /Account/LinkLoginCallback
         public async Task<ActionResult> LinkLoginCallback()
         {
             var loginInfo = await AuthenticationManager.GetExternalLoginInfoAsync(XsrfKey, User.Identity.GetUserId());
@@ -311,8 +305,6 @@ namespace  Ecommerce.Web.Controllers
             return RedirectToAction("Manage", new { Message = ManageMessageId.Error });
         }
 
-        //
-        // POST: /Account/ExternalLoginConfirmation
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -354,8 +346,7 @@ namespace  Ecommerce.Web.Controllers
             AuthenticationManager.SignOut();
             return RedirectToAction("Index", "Home");
         }
-        //
-        // POST: /Account/LogOff
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult LogOff()
@@ -364,8 +355,7 @@ namespace  Ecommerce.Web.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        //
-        // GET: /Account/ExternalLoginFailure
+
         [AllowAnonymous]
         public ActionResult ExternalLoginFailure()
         {
@@ -476,6 +466,7 @@ namespace  Ecommerce.Web.Controllers
             }
         }
         #endregion
+
         [AllowAnonymous]
         public ActionResult Authentication(string returnUrl)
         {
@@ -587,7 +578,7 @@ namespace  Ecommerce.Web.Controllers
                 {
                     u.deleleallrole(item);
                     UserManager.AddToRole(item, quyen);
-                }         
+                }
             }
             return TimUser(null, null, null, null, null, null);
         }
@@ -616,8 +607,64 @@ namespace  Ecommerce.Web.Controllers
         {
             int pageSize = (pagesize ?? 10);
             int pageNumber = (page ?? 1);
-            return PartialView("UserList", lst.OrderBy(m => m.HoTen).ToPagedList(pageNumber, pageSize));
+            return PartialView("_UserList", lst.OrderBy(m => m.HoTen).ToPagedList(pageNumber, pageSize));
         }
 
+        [AllowAnonymous]
+        public ActionResult CreateSupperAdminUser()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        [AuthLog(Roles = "Quản trị viên")]
+        public async Task<ActionResult> GenerateSupperAdminUser()
+        {
+            var user = new ApplicationUser()
+            {
+                UserName = "SuperAdmin",
+                PhoneNumber = "",
+                Email = "superadmin@gmail.com",
+                DiaChi = "",
+                HoTen = "SuperAdmin",
+                Avatar = "noavatar.jpg",
+                EmailConfirmed = true,
+                MaNV = "NV001"
+
+            };
+            var exitUser = UserManager.FindByName("SuperAdmin");
+            if (exitUser != null)
+            {
+                UserManager.Delete(exitUser);
+
+            }
+            var result = await UserManager.CreateAsync(user, "SupperAdmin@123");
+            if (result.Succeeded)
+            {
+                UserManager.AddToRole(user.Id, "Quản trị viên");
+                await SignInAsync(user, isPersistent: false);
+                ManagerObiect.getIntance().userName = "SuperAdmin";
+            }
+            return RedirectToAction("Authentication");
+        }
+
+        [HttpPost]
+        [AuthLog(Roles = "Quản trị viên")]
+        public bool ResetPass(string userId)
+        {
+            ApplicationUser user = UserManager.FindByName(userId);
+            user.PasswordHash = UserManager.PasswordHasher.HashPassword("123@Abcd");
+            UserManager.UpdateSecurityStamp(user.Id);
+            IdentityResult v = UserManager.Update(user);
+            if (v.Succeeded)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

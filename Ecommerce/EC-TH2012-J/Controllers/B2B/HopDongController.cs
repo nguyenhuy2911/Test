@@ -9,7 +9,7 @@ using Ecommerce.Web.Models;
 using Ecommerce.Web.Models.B2B;
 using Ecommerce.Domain.Model;
 
-namespace  Ecommerce.Web.Controllers.B2B
+namespace Ecommerce.Web.Controllers.B2B
 {
     public class HopDongController : Controller
     {
@@ -40,7 +40,7 @@ namespace  Ecommerce.Web.Controllers.B2B
             ViewBag.loaihd = loaihd;
             return PhanTrangHopDongB2B(ncc.TimHopDong(key, tensp, loaihd), page, null);
         }
-        
+
 
         public ActionResult DeleteHopDong(string id)
         {
@@ -61,7 +61,7 @@ namespace  Ecommerce.Web.Controllers.B2B
             if (ModelState.IsValid)
             {
                 string maHD = ncc.ThemHopDong(loai);
-                if(!(bool)loai.IsBuy)
+                if (!(bool)loai.IsBuy)
                 {
                     return RedirectToAction("ConfigAPI", "AdminB2B", new { MaNCC = loai.MaNCC });
                 }
@@ -85,7 +85,8 @@ namespace  Ecommerce.Web.Controllers.B2B
         {
             int pageSize = (pagesize ?? 10);
             int pageNumber = (page ?? 1);
-            return PartialView("HopDongPartial", lst.OrderByDescending(m => m.NgayKy).ToPagedList(pageNumber, pageSize));
+            var model = lst.OrderByDescending(m => m.NgayKy).ToPagedList(pageNumber, pageSize);
+            return PartialView("HopDongPartial", model);
         }
         public ActionResult PhanTrangHopDongB2B(IQueryable<HopDongNCC> lst, int? page, int? pagesize)
         {
@@ -95,7 +96,7 @@ namespace  Ecommerce.Web.Controllers.B2B
         }
 
 
-        public ActionResult TTGiaoHang(string key, string tensp, bool? loaihd, bool? tt,int? page)
+        public ActionResult TTGiaoHang(string key, string tensp, bool? loaihd, bool? tt, int? page)
         {
             NhaCungCapModel ncc = new NhaCungCapModel();
             ViewBag.key = key;
@@ -103,7 +104,7 @@ namespace  Ecommerce.Web.Controllers.B2B
             ViewBag.loaihd = loaihd;
             ViewBag.tt = tt;
             int pageNumber = (page ?? 1);
-            return PartialView("TTGiaoHangPartial", ncc.TimHopDong(key, tensp, loaihd,tt).OrderByDescending(m=>m.SoNgayGiao).ToPagedList(pageNumber, 10));
+            return PartialView("TTGiaoHangPartial", ncc.TimHopDong(key, tensp, loaihd, tt).OrderByDescending(m => m.SoNgayGiao).ToPagedList(pageNumber, 10));
         }
 
         [HttpPost]
@@ -112,9 +113,9 @@ namespace  Ecommerce.Web.Controllers.B2B
             foreach (var item in lstdel)
             {
                 NhaCungCapModel ncc = new NhaCungCapModel();
-                ncc.XacNhanDaGiao(item,true);
+                ncc.XacNhanDaGiao(item, true);
             }
-            return TTGiaoHang(null, null, null, null,null);
+            return TTGiaoHang(null, null, null, null, null);
         }
 
         [HttpPost]
@@ -130,12 +131,12 @@ namespace  Ecommerce.Web.Controllers.B2B
         public JsonResult Xacnhanthanhtoan(string MaHD)
         {
             HopdongNCCModel modelNCC = new HopdongNCCModel();
-            if(modelNCC.SetTTThanhtoan(MaHD,true))
+            if (modelNCC.SetTTThanhtoan(MaHD, true))
             {
                 return Json("success", JsonRequestBehavior.AllowGet);
             }
 
             return Json("faill", JsonRequestBehavior.AllowGet);
         }
-	}
+    }
 }

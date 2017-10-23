@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace  Ecommerce.Web.Models
+namespace  Ecommerce.Web.Models.ViewModel
 {
     public class ExternalLoginConfirmationViewModel
     {

@@ -1,17 +1,5 @@
 ﻿
 $(document).ready(function () {
-    //window.onbeforeunload = function (e) {
-    //    var message = "Your confirmation message goes here.",
-    //    e = e || window.event;
-    //    // For IE and Firefox
-    //    if (e) {
-    //        e.returnValue = message;
-    //    }
-    //    //alert("thoat");
-    //    // For Safari
-    //    return message;
-    //};
-    
 
 });
     function Addcart(value, sl) {
@@ -27,7 +15,7 @@ $(document).ready(function () {
             data: { sp: value, quantity: sl },
             success: function (result) {
                 $('.basket').html(result);
-                alert("Thêm thành công");
+                window.location.href = "/Home/Cart"
             }
         });
     }

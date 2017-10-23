@@ -1,21 +1,4 @@
 ﻿<script>
-    //$(document).ready(function () {
-    //    $(document).on("click", "#nav_grid a[href]", function () {
-    //        $.ajax({
-    //            url: $(this).attr("href"),
-    //            type: 'GET',
-    //            cache: false,
-    //            success: function (result) {
-    //                $('#grid-view').html(result);
-    //                $('html, body').animate({
-    //                    scrollTop: $("#grid-view").offset().top
-    //                }, 500);
-    //            }
-    //        });
-    //        return false;
-    //    });
-    //});
-
     function summitfilter()
     {
         var form = document.getElementById("productfilterfrm");
@@ -25,7 +8,7 @@
 </script>
 
 <!-- ========================================= PRODUCT FILTER ========================================= -->
-@model IQueryable<Ecommerce.Web.Models.LoaiSP>
+@model IQueryable<Ecommerce.Domain.Model.LoaiSP>
 @using Ecommerce.Web.Models;
 <div class="widget">
     <h1>Lọc sản phẩm</h1>

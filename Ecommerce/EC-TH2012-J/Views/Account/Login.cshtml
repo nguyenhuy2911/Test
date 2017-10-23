@@ -1,13 +1,13 @@
-﻿@model Ecommerce.Web.Models.LoginViewModel
+﻿@model Ecommerce.Web.Models.ViewModel.LoginViewModel
 
 <h2 class="bordered">Đăng nhập</h2>
 <p>Bạn có thể đăng nhập với:</p>
 
 <div class="social-auth-buttons">
     <div class="row">
-        <section id="socialLoginForm">
+        @*<section id="socialLoginForm">
             @Html.Partial("_ExternalLoginsListPartial", new { Action = "ExternalLogin", ReturnUrl = ViewBag.ReturnUrl })
-        </section>
+        </section>*@
 
         @*<div class="col-md-6">
                 <button class="btn-block btn-lg btn btn-twitter"><i class="fa fa-twitter"></i> Sign In with Twitter</button>
