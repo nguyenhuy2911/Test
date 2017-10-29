@@ -30,3 +30,19 @@ E:\lip cms\Practise\test_entityFarmework\test_entityFarmework\bin\Debug\AutoMapp
 E:\lip cms\Practise\test_entityFarmework\test_entityFarmework\bin\Debug\EntityFramework.xml
 E:\lip cms\Practise\test_entityFarmework\test_entityFarmework\bin\Debug\EntityFramework.SqlServer.xml
 E:\lip cms\Practise\test_entityFarmework\test_entityFarmework\obj\Debug\test_entityFarmework.csprojResolveAssemblyReference.cache
+E:\Working\Git\Test\test_entityFarmework\test_entityFarmework\bin\Debug\test_entityFarmework.exe.config
+E:\Working\Git\Test\test_entityFarmework\test_entityFarmework\obj\Debug\test_entityFarmework.exe
+E:\Working\Git\Test\test_entityFarmework\test_entityFarmework\obj\Debug\test_entityFarmework.pdb
+E:\Working\Git\Test\test_entityFarmework\test_entityFarmework\bin\Debug\test_entityFarmework.exe
+E:\Working\Git\Test\test_entityFarmework\test_entityFarmework\bin\Debug\test_entityFarmework.pdb
+E:\Working\Git\Test\test_entityFarmework\test_entityFarmework\bin\Debug\AutoMapper.dll
+E:\Working\Git\Test\test_entityFarmework\test_entityFarmework\bin\Debug\AutoMapper.EF6.dll
+E:\Working\Git\Test\test_entityFarmework\test_entityFarmework\bin\Debug\DelegateDecompiler.dll
+E:\Working\Git\Test\test_entityFarmework\test_entityFarmework\bin\Debug\DelegateDecompiler.EntityFramework.dll
+E:\Working\Git\Test\test_entityFarmework\test_entityFarmework\bin\Debug\EntityFramework.dll
+E:\Working\Git\Test\test_entityFarmework\test_entityFarmework\bin\Debug\EntityFramework.SqlServer.dll
+E:\Working\Git\Test\test_entityFarmework\test_entityFarmework\bin\Debug\Mono.Reflection.dll
+E:\Working\Git\Test\test_entityFarmework\test_entityFarmework\bin\Debug\AutoMapper.xml
+E:\Working\Git\Test\test_entityFarmework\test_entityFarmework\bin\Debug\EntityFramework.xml
+E:\Working\Git\Test\test_entityFarmework\test_entityFarmework\bin\Debug\EntityFramework.SqlServer.xml
+E:\Working\Git\Test\test_entityFarmework\test_entityFarmework\obj\Debug\test_entityFarmework.csprojResolveAssemblyReference.cache

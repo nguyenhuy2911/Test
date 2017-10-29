@@ -67,5 +67,10 @@ namespace test_entityFarmework.repository
             return product;
         }
 
+        public List<Product> GetInclude()
+        {
+            return dbset.Include(p=>p.Images.Where(o => o.Type_Id == p.Id.ToString())).ToList();
+        }
+
     }
 }

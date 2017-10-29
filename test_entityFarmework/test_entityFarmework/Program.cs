@@ -14,7 +14,7 @@ namespace test_entityFarmework
             do
             {
                 var productRipository = new ProductRepository();
-                var products = productRipository.GetEagerAll2();
+                var products = productRipository.GetInclude();
                 //var categorys = products.Product_Categories;
                 //var category = categorys.First().Category;
                 //var cateRepository = new CategoryRepository();

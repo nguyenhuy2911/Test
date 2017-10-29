@@ -25,5 +25,6 @@ namespace test_entityFarmework
 
         public bool? Publish { get; set; }
         public virtual ICollection<Product_Category> Product_Categories { get; set; }
+        public virtual ICollection<Image> Images { get; set; }
     }
 }

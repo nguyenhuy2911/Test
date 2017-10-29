@@ -1,6 +1,0 @@
-﻿@model List<Ecommerce.Domain.Model.LoaiSP>
-
-@foreach (var item in Model)
-{
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="@Url.Action("AdvancedSearchView", "Search", new { loai = item.MaLoai })">@item.TenLoai</a></li>
-}
